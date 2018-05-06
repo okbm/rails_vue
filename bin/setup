@@ -17,6 +17,9 @@ chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
+  puts '== Installing gem =='
+  system!('bundle install --path vendor/bundle')
+
   puts '== Installing yarn =='
   system('brew list | grep yarn') || system!('brew install yarn')
 
